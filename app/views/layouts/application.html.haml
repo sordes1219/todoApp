@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title TodoApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=device-width, inicial-scale=1.0", :name => "viewport"}/
+
+  %body
+    %header
+      .header_logos
+        %p.header_pageTitle
+          = link_to 'Boards', root_path
+      - if user_signed_in?
+        .dropdown
+        = link_to 'logout', destroy_user_session_path, method:'delete', class:'loginBtn'
+      - else
+        = link_to 'login', new_user_session_path, class:'loginBtn'
+
+    - if flash.present?
+      .flash
+        = flash.each do |key, value|
+          %div{:class => key}= value
+    = yield

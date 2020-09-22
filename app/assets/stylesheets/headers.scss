@@ -1,0 +1,17 @@
+@import 'variables';
+
+header {
+  padding: $base-padding-size;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid silver;
+}
+
+.header {
+  &_pageTitle {
+    font-size: $base-font-size;
+  }
+
+}
+
+
