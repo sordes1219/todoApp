@@ -2,6 +2,9 @@
 @import 'headers';
 @import 'form';
 @import 'boards';
+@import 'common';
+
+$flash-height: 40px;
 
 html {
   word-spacing: 1px;
@@ -43,5 +46,14 @@ h2 {
 
 h3 {
   font-size: 22px;
+}
+
+.flash {
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  line-height: $flash-height;
+  background-color: orange;
+  color: white;
 }
 

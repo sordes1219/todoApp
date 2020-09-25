@@ -11,6 +11,6 @@
               = link_to 'Edit', edit_board_path(board)
               = link_to 'Delete', board_path(board), data: { method: 'delete' }
       %p= board.description
-      = image_tag 'default-avatar.png', class: 'avatar'
+      = image_tag 'default-avatar.png', class: 'board_avatar'
   = link_to new_board_path do
     .board.newlink +Add new board
