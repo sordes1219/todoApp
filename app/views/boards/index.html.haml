@@ -1,1 +1,8 @@
-hello
+.container
+  - @boards.each do |board|
+    .board
+      .board_header
+        %h3= board.title
+        = image_tag 'actions.svg', class: 'dropdown'
+      %p= board.description
+      = image_tag 'default-avatar.png', class: 'dropdown'

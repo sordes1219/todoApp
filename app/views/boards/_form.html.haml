@@ -4,11 +4,9 @@
 = form_with(model: @board,local: true) do |f|
   .field
     = f.label :title, 'Name'
-    %br/
     = f.text_field :title, class: 'text'
   .field_lg
     = f.label :description, 'Description'
-    %br/
-    = f.text_area :descripttion
+    = f.text_area :description
   .actions_createboard
     = f.submit 'Submit', class:'primary-btn'
