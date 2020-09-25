@@ -53,8 +53,6 @@
     &:hover .dropdown_content{
       display: block;
     }
-
-
     
   }
 
@@ -62,4 +60,14 @@
     display: flex;
     justify-content: space-between;
   }
+
+}
+
+.newlink {
+  background-color: #fff;
+  border: 3px dashed $base-bg-color;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 160px;
+  padding: 0;
 }

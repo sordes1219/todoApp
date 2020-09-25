@@ -4,10 +4,13 @@
     .board
       .board_header
         %h3= board.title
-        .dropdown
-          = image_tag 'actions.svg', class: 'dropdown_btn'
-          .dropdown_content
-            = link_to 'Edit', edit_board_path(board)
-            = link_to 'Delete', board_path(board), data: { method: 'delete' }
+        - if board.user == current_user
+          .dropdown
+            = image_tag 'actions.svg', class: 'dropdown_btn'
+            .dropdown_content
+              = link_to 'Edit', edit_board_path(board)
+              = link_to 'Delete', board_path(board), data: { method: 'delete' }
       %p= board.description
       = image_tag 'default-avatar.png', class: 'avatar'
+  = link_to new_board_path do
+    .board.newlink +Add new board
