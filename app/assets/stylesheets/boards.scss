@@ -1,0 +1,65 @@
+@import 'variables';
+
+.board {
+  width: 100%;
+  height: 160px;
+  border: none;
+  border-radius: $base-border-radius;
+  background-color: $base-bg-color;
+  padding: $base-padding-size;
+  margin-bottom: $base-padding-size;
+  position: relative;
+
+  p {
+    font-size: 16px;
+    color: darkgray
+  } 
+  
+  .avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 999px;
+    position: absolute;
+    bottom: $base-padding-size;
+    left: $base-padding-size;
+  }
+
+  .dropdown {
+    position: relative;
+    
+    &_btn {
+      height: 30px;
+      width: 30px;
+    }
+
+    &_content {
+      height: 60px;
+      width: 60px;
+      background-color: white;
+      border-radius: $base-border-radius;
+      padding: 8px;
+      position: absolute;
+      top: 30px;
+      right: 0px;
+      display: none;
+      z-index: 1;
+    
+      a {
+        font-size: 12px;
+      }
+
+    }
+    
+    &:hover .dropdown_content{
+      display: block;
+    }
+
+
+    
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

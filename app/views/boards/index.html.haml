@@ -1,8 +1,13 @@
 .container
+  %h2= 'All Boards'
   - @boards.each do |board|
     .board
       .board_header
         %h3= board.title
-        = image_tag 'actions.svg', class: 'dropdown'
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropdown_btn'
+          .dropdown_content
+            = link_to 'Edit', edit_board_path(board)
+            = link_to 'Delete', board_path(board), data: { method: 'delete' }
       %p= board.description
-      = image_tag 'default-avatar.png', class: 'dropdown'
+      = image_tag 'default-avatar.png', class: 'avatar'
