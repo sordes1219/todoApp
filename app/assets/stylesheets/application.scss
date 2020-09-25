@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'headers';
 @import 'form';
+@import 'boards';
 
 html {
   word-spacing: 1px;
@@ -21,7 +22,6 @@ html {
 
 body {
   height: 100%;
-  background-color: $base-bg-color;
   font-size: 1em;
   color: $base-font-color;
 }
@@ -40,3 +40,8 @@ a {
 h2 {
   height: 10%;
 }
+
+h3 {
+  font-size: 22px;
+}
+
