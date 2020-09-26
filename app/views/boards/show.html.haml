@@ -1,0 +1,16 @@
+.container
+  %h2= @board.title
+  - @board.tasks.each do |task|
+    .board
+      .board_header
+        %h3= task.title
+        - if task.user == current_user
+          .dropdown
+            = image_tag 'actions.svg', class: 'dropdown_btn'
+            .dropdown_content
+              = link_to 'Edit', edit_board_task_path({board_id: @board.id, id: task.id})
+              = link_to 'Delete', board_task_path({board_id: @board.id, id: task.id}), data: { method: 'delete' }
+      %p= task.description
+      = image_tag 'default-avatar.png', class: 'board_avatar'
+  = link_to new_board_task_path(@board) do
+    .board.newlink +Add new task
