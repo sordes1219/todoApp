@@ -2,6 +2,10 @@ class TasksController < ApplicationController
   
   before_action :authenticate_user!, only: %i[new create destroy edit update]
 
+  def show
+    @task = Task.find(params[:id])
+  end
+
   def new
     @task = current_user.tasks.build(board_id: params[:board_id])
   end
@@ -39,7 +43,7 @@ class TasksController < ApplicationController
   private
 
   def create_params
-    params.require(:task).permit(:title, :description, :deadline)
+    params.require(:task).permit(:title, :description, :deadline, :eyecatch)
   end
 
 end

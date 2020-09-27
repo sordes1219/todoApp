@@ -1,5 +1,4 @@
 @import 'variables';
-$avatar-size: 40px;
 
 header {
   padding: $base-padding-size;
@@ -10,13 +9,19 @@ header {
 }
 
 .header {
+
+  &_logos {
+    display: flex;
+    align-items: center;
+  }
+
   &_pageTitle {
     font-size: $base-font-size;
   }
 
   &_avatar {
-    height: $avatar-size;
-    width: $avatar-size;
+    height: $base-icon-size * 4 / 3;
+    width: $base-icon-size * 4 / 3;
     border-radius: 100%;
     margin: auto 0 ;
   }

@@ -4,24 +4,24 @@
   position: relative;
   
   &_btn {
-    height: 30px;
-    width: 30px;
+    height: $base-icon-size;
+    width: $base-icon-size;
   }
 
   &_content {
-    height: 60px;
-    width: 60px;
+    width: $base-icon-size * 2;
     background-color: white;
     border-radius: $base-border-radius;
-    padding: 8px;
+    padding: $base-padding-size * 0.5;
     position: absolute;
-    top: 30px;
+    top: $base-icon-size;
     right: 0px;
     display: none;
     z-index: 1;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
   
     a {
-      font-size: 12px;
+      font-size: $base-font-size * 0.5 ;
     }
 
   }
@@ -30,4 +30,25 @@
     display: block;
   }
   
+}
+
+.newlink {
+  background-color: #fff;
+  border: 3px dashed $base-bg-color;
+  text-align: center;
+  line-height: $large-box-height;
+  padding: 0;
+}
+
+.eyecatch {
+  width: 100%;
+  height: $large-box-height;
+  border-radius: $base-border-radius;
+  margin-bottom: $base-margin-size;
+}
+
+.icon {
+  height: $base-icon-size;
+  width: $base-icon-size;
+  border-radius: 100%;  
 }

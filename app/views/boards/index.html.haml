@@ -2,16 +2,19 @@
   %h2= 'All Boards'
   - @boards.each do |board|
     = link_to board_path(board) do
-      .board
-        .board_header
+      .card
+        .card_header
           %h3= board.title
           - if board.user == current_user
             .dropdown
-              = image_tag 'actions.svg', class: 'dropdown_btn'
+              = image_tag 'actions.svg', class: 'icon'
               .dropdown_content
-                = link_to 'Edit', edit_board_path(board)
-                = link_to 'Delete', board_path(board), data: { method: 'delete' }
-        %p= board.description
-        = image_tag 'default-avatar.png', class: 'board_avatar'
+                %ul
+                  %li= link_to 'Edit', edit_board_path(board)
+                  %li= link_to 'Delete', board_path(board), data: { method: 'delete' }
+        .card_content
+          %p= board.description
+        .card_footer
+          = image_tag 'default-avatar.png', class: 'icon'
   = link_to new_board_path do
-    .board.newlink +Add new board
+    .card.newlink +Add new board

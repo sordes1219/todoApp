@@ -1,0 +1,20 @@
+.container
+  .task
+    .card_header
+      %h2= @task.title
+      - if @task.user == current_user
+        .dropdown
+          = image_tag 'actions.svg', class: 'icon'
+          .dropdown_content
+            %ul
+              %li= link_to 'Edit', edit_board_task_path(board_id: @task.board_id, id: @task.id)
+              %li= link_to 'Delete', board_task_path(board_id: @task.board_id, id: @task.id), data:{method:'delete'}
+    = image_tag @task.eyecatch, class: 'eyecatch'
+    .card
+      .card_content
+        = @task.description
+  .comment
+    .comment_header
+      %h2= 'Comment'
+    .comment_content
+      

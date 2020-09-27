@@ -11,5 +11,9 @@
   .field
     = f.label :deadline, 'Deadline'
     = f.date_field :deadline, class: 'text'
+  .field
+    = f.label :eyecatch,'Eyecatch'
+    %br/
+    = f.file_field :eyecatch, accept: 'image/jpeg, image/gif, image/png'
   .actions_createtask
     = f.submit 'Submit', class:'primary-btn'
