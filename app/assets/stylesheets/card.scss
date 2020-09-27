@@ -1,0 +1,32 @@
+@import 'variables';
+
+.card {
+  width: 100%;
+  min-height: $large-box-height;
+  border: none;
+  border-radius: $base-border-radius;
+  background-color: $base-bg-color;
+  padding: $base-padding-size;
+  margin-bottom: $base-padding-size;
+
+  &_header {
+    min-height: $box-height;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_content {
+    min-height: $box-height ;
+    p {
+      font-size: $base-font-size * 0.7;
+      color: darkgray
+    }
+  }
+
+  &_footer {
+    min-height: $box-height;
+    display: flex;
+    align-items: flex-end;
+  }
+
+}

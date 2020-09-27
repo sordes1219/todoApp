@@ -1,7 +1,7 @@
 @import 'variables';
-@import 'headers';
+@import 'header';
 @import 'form';
-@import 'boards';
+@import 'card';
 @import 'common';
 
 $flash-height: 40px;
@@ -38,6 +38,11 @@ body {
 a {
   text-decoration: none;
   color: $base-font-color;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 h2 {

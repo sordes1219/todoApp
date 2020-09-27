@@ -1,0 +1,19 @@
+%ul
+- @task.errors.full_messages.each do |message|
+  %li= message
+= form_with(model: @task, url: path,local: true) do |f|
+  .field
+    = f.label :title, 'Name'
+    = f.text_field :title, class: 'text'
+  .field_lg
+    = f.label :description, 'Description'
+    = f.text_area :description
+  .field
+    = f.label :deadline, 'Deadline'
+    = f.date_field :deadline, class: 'text'
+  .field
+    = f.label :eyecatch,'Eyecatch'
+    %br/
+    = f.file_field :eyecatch, accept: 'image/jpeg, image/gif, image/png'
+  .actions_createtask
+    = f.submit 'Submit', class:'primary-btn'
