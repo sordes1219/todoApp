@@ -27,5 +27,9 @@ class Task < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   has_one_attached :eyecatch
+
+  def has_eyecatch?
+    eyecatch&.attached?
+  end
     
 end

@@ -61,7 +61,12 @@ form {
 
     &_createtask {
       position: relative;
-      height: 40%;
+      height: 25%;
+    }
+
+    &_createcomment {
+      position: relative;
+      height: 70%;
     }
   }
 }

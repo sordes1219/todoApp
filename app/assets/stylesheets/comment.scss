@@ -1,0 +1,25 @@
+@import 'variables';
+
+.comment {
+
+  &_header {
+    margin-bottom: $base-margin-size * 2;
+
+    h2 {
+      font-weight: normal;
+    }
+  }
+
+  &_content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $base-margin-size;
+    min-height: $box-height;
+    word-wrap: break-word;
+
+    .text {
+      width: 85%;
+    }
+  }
+}
