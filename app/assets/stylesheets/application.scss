@@ -3,8 +3,8 @@
 @import 'form';
 @import 'card';
 @import 'common';
-
-$flash-height: 40px;
+@import 'comment';
+@import 'task';
 
 html {
   word-spacing: 1px;

@@ -1,0 +1,9 @@
+@import 'variables';
+
+.task {
+
+  &_header {
+    margin-bottom: $base-margin-size * 2;
+  }
+
+}

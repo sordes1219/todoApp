@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  
+
   before_action :authenticate_user!, only: %i[new create destroy edit update]
 
   def show
@@ -12,7 +12,7 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.build(board_id: params[:board_id])
-    if @task.update(create_params)
+    if @task.update(task_params)
       redirect_to board_path(@task.board), notice: 'タスクを新規登録しました'
     else
       flash.now[:error] = '新規登録に失敗しました'
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
 
   def update
     @task = current_user.tasks.find(params[:id])
-    if @task.update(create_params)
+    if @task.update(task_params)
       redirect_to board_path(@task.board), notice: 'タスクを更新しました'
     else
       flash.now[:error] = '更新に失敗しました'
@@ -42,7 +42,7 @@ class TasksController < ApplicationController
 
   private
 
-  def create_params
+  def task_params
     params.require(:task).permit(:title, :description, :deadline, :eyecatch)
   end
 

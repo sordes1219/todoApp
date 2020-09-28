@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = current_user.boards.build(create_params)
+    @board = current_user.boards.build(board_params)
     if @board.save
       redirect_to boards_path, notice: 'ボードを新規登録しました'
     else
@@ -29,7 +29,7 @@ class BoardsController < ApplicationController
 
   def update
     @board = current_user.boards.find(params[:id])
-    if @board.update(create_params)
+    if @board.update(board_params)
       redirect_to boards_path, notice: 'ボードを更新しました'
     else
       flash.now[:error] = '更新に失敗しました'
@@ -45,7 +45,7 @@ class BoardsController < ApplicationController
 
   private
 
-  def create_params
+  def board_params
     params.require(:board).permit(:title, :description)
   end
 
